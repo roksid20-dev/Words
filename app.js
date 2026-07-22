@@ -212,7 +212,6 @@ function showWord(){
     }
 
 
-
     if(trainingWords.length === 0){
 
 
@@ -248,26 +247,10 @@ function showWord(){
         "";
 
 
-}
-
-
-
-currentWord =
-    todayWords[currentIndex % todayWords.length];
-
-
-    wordElement.textContent =
-        currentWord.english;
-
-
-    answerInput.value = "";
-
-    resultElement.textContent = "";
-
     answerInput.focus();
 
-}
 
+}
 
 
 function checkAnswer(){
