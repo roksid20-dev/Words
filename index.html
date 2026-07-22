@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WordFlow</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+    <h1>📚 WordFlow</h1>
+    <p>Твой тренажёр английских слов</p>
+</header>
+
+
+<main>
+
+<section class="card">
+
+<h2 id="word">
+Добро пожаловать
+</h2>
+
+
+<input 
+id="answer"
+type="text"
+placeholder="Введите перевод"
+autocomplete="off"
+/>
+
+
+<button id="check">
+Проверить
+</button>
+
+
+<p id="result"></p>
+
+</section>
+
+
+
+<section class="card">
+
+<h3>Импорт слов</h3>
+
+<p>
+Формат:
+<br>
+apple - яблоко
+<br>
+run - бегать
+</p>
+
+
+<textarea 
+id="importWords"
+placeholder="Вставь свои слова сюда">
+</textarea>
+
+
+<button id="importButton">
+Добавить слова
+</button>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+WordFlow v0.1
+</p>
+
+</footer>
+
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
