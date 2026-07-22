@@ -7,6 +7,20 @@
 const wordElement = document.getElementById("word");
 const answerInput = document.getElementById("answer");
 const checkButton = document.getElementById("check");
+const difficultyButtons =
+    document.getElementById("difficultyButtons");
+
+
+const hardButton =
+    document.getElementById("hard");
+
+
+const normalButton =
+    document.getElementById("normal");
+
+
+const easyButton =
+    document.getElementById("easy");
 const resultElement = document.getElementById("result");
 
 const importArea = document.getElementById("importWords");
@@ -249,26 +263,8 @@ saveWords();
 
 
 
-    setTimeout(()=>{
-
-
-        currentIndex++;
-
-
-        if(currentIndex >= words.length){
-
-            currentIndex = 0;
-
-        }
-
-
-        showWord();
-
-
-    },1200);
-
-
-}
+    difficultyButtons.style.display =
+    "block";
 
 
 
