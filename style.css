@@ -428,3 +428,35 @@ footer {
     padding: 12px 18px;
 
 }
+
+.training-mode {
+
+    margin-top: 15px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+}
+
+
+.training-mode label {
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:18px;
+
+}
+
+
+.training-mode p {
+
+    margin-top:5px;
+
+    color:#777;
+
+}
