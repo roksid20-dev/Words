@@ -197,11 +197,17 @@ const todayWords =
 
 if(todayWords.length === 0){
 
+
     wordElement.textContent =
-        "🎉 На сегодня всё!";
+        "🎉 Умное повторение закончено";
+
+
+    resultElement.textContent =
+        "Можно продолжить в свободном режиме";
 
 
     return;
+
 
 }
 
