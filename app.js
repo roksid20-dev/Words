@@ -872,11 +872,11 @@ function startTraining(){
     currentIndex = 0;
 
 
-    startTraining.style.display =
+    startTrainingButton.style.display =
         "none";
 
 
-    stopTraining.style.display =
+    stopTrainingButton.style.display =
         "block";
 
 
