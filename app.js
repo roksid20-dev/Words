@@ -910,7 +910,7 @@ startTrainingButton.addEventListener(
 );
 
 
-stopTraining.addEventListener(
+stopTrainingButton.addEventListener(
     "click",
     stopTraining
 );
