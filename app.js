@@ -880,17 +880,37 @@ function stopTraining(){
     trainingStarted = false;
 
 
-    stopTraining.style.display =
+    trainingWords = [];
+
+
+    currentIndex = 0;
+
+
+
+    stopTrainingButton.style.display =
         "none";
 
 
-    startTraining.style.display =
+    startTrainingButton.style.display =
         "block";
 
 
-    wordElement.textContent =
-        "Тренировка завершена";
 
+    difficultyButtons.style.display =
+        "none";
+
+
+
+    wordElement.textContent =
+        "Тренировка завершена 🎉";
+
+
+    answerInput.value =
+        "";
+
+
+    resultElement.textContent =
+        "";
 
 }
 
