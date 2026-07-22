@@ -864,6 +864,10 @@ function startTraining(){
 
         trainingWords =
             getFreeWords(words);
+        console.log(
+    "Слов для тренировки:",
+    trainingWords.length
+);
 
 
     }
