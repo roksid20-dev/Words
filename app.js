@@ -771,3 +771,5 @@ renderWords();
 showWord();
 
 updateStats();
+
+updateTodayStats();
