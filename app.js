@@ -273,13 +273,6 @@ function checkAnswer(){
 
 
 }
-
-
-    difficultyButtons.style.display =
-    "block";
-
-
-
 // =========================
 // Список слов
 // =========================
