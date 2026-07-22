@@ -14,6 +14,8 @@ const importButton = document.getElementById("importButton");
 
 const wordsList = document.getElementById("wordsList");
 const searchInput = document.getElementById("searchWords");
+const wordCount =
+    document.getElementById("wordCount");
 
 const editModal = document.getElementById("editModal");
 
@@ -110,7 +112,16 @@ function saveWords(){
 
 }
 
+function updateStats(){
 
+    if(wordCount){
+
+        wordCount.textContent =
+            words.length;
+
+    }
+
+}
 
 // =========================
 // Обучение
@@ -510,3 +521,5 @@ cancelEditButton.addEventListener(
 renderWords();
 
 showWord();
+
+updateStats();
