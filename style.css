@@ -201,3 +201,70 @@ footer {
     }
 
 }
+
+.word-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid #eee;
+
+}
+
+
+.word-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.word-info strong {
+
+    font-size: 18px;
+
+}
+
+
+.word-info span {
+
+    color: #6e6e73;
+
+}
+
+
+
+.word-actions button {
+
+    width: auto;
+
+    padding: 8px 12px;
+
+    margin-left: 6px;
+
+    font-size: 14px;
+
+}
+
+
+
+.delete-btn {
+
+    background: #ff3b30;
+
+}
+
+
+.edit-btn {
+
+    background: #34c759;
+
+}
