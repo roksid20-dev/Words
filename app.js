@@ -904,7 +904,7 @@ function stopTraining(){
 
 }
 
-startTraining.addEventListener(
+startTrainingButton.addEventListener(
     "click",
     startTraining
 );
