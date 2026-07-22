@@ -3,7 +3,21 @@
 // Управление словами
 // =========================
 
+let trainingStarted = false;
 
+
+let trainingWords = [];
+
+const startTraining =
+document.getElementById(
+    "startTraining"
+);
+
+
+const stopTraining =
+document.getElementById(
+    "stopTraining"
+);
 const wordElement = document.getElementById("word");
 const answerInput = document.getElementById("answer");
 const checkButton = document.getElementById("check");
@@ -831,6 +845,68 @@ freeMode.addEventListener(
 
     }
 );
+
+function startTraining(){
+
+
+    trainingStarted = true;
+
+
+    if(trainingMode === "smart"){
+
+
+        trainingWords =
+            getTodayWords(words);
+
+
+    }
+    else {
+
+
+        trainingWords =
+            getFreeWords(words);
+
+
+    }
+
+
+    currentIndex = 0;
+
+
+    startTraining.style.display =
+        "none";
+
+
+    stopTraining.style.display =
+        "block";
+
+
+    showWord();
+
+
+}
+
+
+
+function stopTraining(){
+
+
+    trainingStarted = false;
+
+
+    stopTraining.style.display =
+        "none";
+
+
+    startTraining.style.display =
+        "block";
+
+
+    wordElement.textContent =
+        "Тренировка завершена";
+
+
+}
 // старт
 
 renderWords();
