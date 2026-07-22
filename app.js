@@ -204,45 +204,48 @@ function updateTodayStats(){
 
 function showWord(){
 
-    if(words.length === 0){
 
-        wordElement.textContent =
-            "Нет слов";
+    if(!trainingStarted){
 
         return;
 
     }
 
 
-let todayWords;
+
+    if(trainingWords.length === 0){
 
 
-if(trainingStarted){
+        wordElement.textContent =
+            "Нет слов для тренировки";
 
-    todayWords =
-        trainingWords;
 
-}
-else {
+        return;
 
-    return;
-
-}
+    }
 
 
 
-if(todayWords.length === 0){
+    currentWord =
+        trainingWords[
+            currentIndex %
+            trainingWords.length
+        ];
+
 
 
     wordElement.textContent =
-        "🎉 Умное повторение закончено";
+        currentWord.english;
+
+
+
+    answerInput.value =
+        "";
+
 
 
     resultElement.textContent =
-        "Можно продолжить в свободном режиме";
-
-
-    return;
+        "";
 
 
 }
