@@ -1,10 +1,8 @@
 // =========================
-// WordFlow v0.1
-// Основная логика приложения
+// WordFlow v0.2
+// Управление словами
 // =========================
 
-
-// Элементы страницы
 
 const wordElement = document.getElementById("word");
 const answerInput = document.getElementById("answer");
@@ -14,27 +12,29 @@ const resultElement = document.getElementById("result");
 const importArea = document.getElementById("importWords");
 const importButton = document.getElementById("importButton");
 
+const wordsList = document.getElementById("wordsList");
+const searchInput = document.getElementById("searchWords");
 
-// Получаем слова из памяти браузера
+
+
+// Получаем слова
 
 let words = JSON.parse(
     localStorage.getItem("wordflow_words")
 ) || [];
 
 
-// Текущее слово
+// текущее слово
 
 let currentWord = null;
-
-
-// Индекс
 
 let currentIndex = 0;
 
 
-// Если слов нет — добавляем примеры
 
-if (words.length === 0) {
+// Если база пустая
+
+if(words.length === 0){
 
     words = [
         {
@@ -60,7 +60,7 @@ if (words.length === 0) {
 
 
 
-// Сохраняем слова
+// сохранение
 
 function saveWords(){
 
@@ -73,7 +73,10 @@ function saveWords(){
 
 
 
-// Показываем слово
+// =========================
+// Обучение
+// =========================
+
 
 function showWord(){
 
@@ -105,23 +108,23 @@ function showWord(){
 
 
 
-// Проверяем ответ
-
 function checkAnswer(){
 
-    const userAnswer =
+
+    const answer =
         answerInput.value
         .trim()
         .toLowerCase();
 
 
-    const correctAnswer =
+    const correct =
         currentWord.russian
+        .trim()
         .toLowerCase();
 
 
 
-    if(userAnswer === correctAnswer){
+    if(answer === correct){
 
         resultElement.textContent =
             "✅ Правильно!";
@@ -131,8 +134,7 @@ function checkAnswer(){
 
 
         resultElement.textContent =
-            "❌ Ответ: " +
-            currentWord.russian;
+            "❌ Ответ: " + currentWord.russian;
 
     }
 
@@ -157,42 +159,171 @@ function checkAnswer(){
     },1200);
 
 
+}
+
+
+
+// =========================
+// Список слов
+// =========================
+
+
+function renderWords(filter = ""){
+
+
+    wordsList.innerHTML = "";
+
+
+
+    words
+    .filter(word => {
+
+
+        const text =
+            (
+                word.english +
+                " " +
+                word.russian
+            )
+            .toLowerCase();
+
+
+        return text.includes(
+            filter.toLowerCase()
+        );
+
+
+    })
+    .forEach((word,index)=>{
+
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "word-item";
+
+
+
+        item.innerHTML = `
+
+        <div class="word-info">
+
+            <strong>
+            ${word.english}
+            </strong>
+
+            <span>
+            ${word.russian}
+            </span>
+
+        </div>
+
+
+        <div class="word-actions">
+
+            <button
+            class="edit-btn"
+            onclick="editWord(${index})">
+            ✏️
+            </button>
+
+
+            <button
+            class="delete-btn"
+            onclick="deleteWord(${index})">
+            🗑
+            </button>
+
+        </div>
+
+        `;
+
+
+        wordsList.appendChild(item);
+
+
+    });
+
 
 }
 
 
 
-// Кнопка проверки
+// удалить слово
 
-checkButton.addEventListener(
-    "click",
-    checkAnswer
-);
+function deleteWord(index){
 
 
+    const confirmDelete =
+        confirm(
+            "Удалить это слово?"
+        );
 
-// Enter отправляет ответ
 
-answerInput.addEventListener(
-    "keydown",
-    function(event){
+    if(confirmDelete){
 
-        if(event.key === "Enter"){
 
-            checkAnswer();
+        words.splice(index,1);
 
-        }
+
+        saveWords();
+
+        renderWords();
+
 
     }
-);
+
+}
 
 
 
-// Импорт слов
+// изменить слово
+
+function editWord(index){
+
+
+    const word =
+        words[index];
+
+
+    const newTranslation =
+        prompt(
+            "Изменить перевод:",
+            word.russian
+        );
+
+
+    if(newTranslation){
+
+
+        word.russian =
+            newTranslation.trim();
+
+
+        saveWords();
+
+        renderWords();
+
+
+    }
+
+
+}
+
+
+
+// =========================
+// Импорт
+// =========================
+
 
 importButton.addEventListener(
     "click",
-    function(){
+    ()=>{
 
 
         const text =
@@ -200,11 +331,7 @@ importButton.addEventListener(
 
 
 
-        if(!text){
-
-            return;
-
-        }
+        if(!text) return;
 
 
 
@@ -227,12 +354,10 @@ importButton.addEventListener(
                 words.push({
 
                     english:
-                        parts[0]
-                        .trim(),
+                        parts[0].trim(),
 
                     russian:
-                        parts[1]
-                        .trim()
+                        parts[1].trim()
 
                 });
 
@@ -247,12 +372,10 @@ importButton.addEventListener(
         saveWords();
 
 
+        renderWords();
+
+
         importArea.value = "";
-
-
-        alert(
-            "Слова добавлены!"
-        );
 
 
     }
@@ -260,6 +383,50 @@ importButton.addEventListener(
 
 
 
-// Запуск
+
+// =========================
+// События
+// =========================
+
+
+checkButton.addEventListener(
+    "click",
+    checkAnswer
+);
+
+
+
+answerInput.addEventListener(
+    "keydown",
+    e=>{
+
+        if(e.key==="Enter"){
+
+            checkAnswer();
+
+        }
+
+    }
+);
+
+
+
+searchInput.addEventListener(
+    "input",
+    ()=>{
+
+        renderWords(
+            searchInput.value
+        );
+
+    }
+);
+
+
+
+
+// старт
+
+renderWords();
 
 showWord();
