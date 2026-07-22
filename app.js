@@ -47,8 +47,17 @@ const saveEditButton = document.getElementById("saveEdit");
 
 const cancelEditButton = document.getElementById("cancelEdit");
 
+const smartMode =
+    document.getElementById("smartMode");
+
+
+const freeMode =
+    document.getElementById("freeMode");
+
 
 let editingIndex = null;
+let trainingMode =
+    "smart";
 
 
 // Получаем слова
@@ -772,6 +781,36 @@ easyButton.addEventListener(
 
         nextWord();
 
+
+    }
+);
+
+smartMode.addEventListener(
+    "change",
+    ()=>{
+
+        if(smartMode.checked){
+
+            trainingMode =
+                "smart";
+
+        }
+
+    }
+);
+
+
+
+freeMode.addEventListener(
+    "change",
+    ()=>{
+
+        if(freeMode.checked){
+
+            trainingMode =
+                "free";
+
+        }
 
     }
 );
