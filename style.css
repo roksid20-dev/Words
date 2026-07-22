@@ -460,3 +460,18 @@ footer {
     color:#777;
 
 }
+
+.training-buttons {
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+
+#stopTraining {
+
+    background:#eee;
+
+}
