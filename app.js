@@ -243,11 +243,14 @@ function checkAnswer(){
 
     if(answer === correct){
 
+
         resultElement.textContent =
             "✅ Правильно!";
+
+
         markCorrect(currentWord);
 
-saveWords();
+        saveWords();
 
 
     } else {
@@ -255,12 +258,21 @@ saveWords();
 
         resultElement.textContent =
             "❌ Ответ: " + currentWord.russian;
+
+
         markWrong(currentWord);
 
-saveWords();
+        saveWords();
+
 
     }
 
+
+    difficultyButtons.style.display =
+        "block";
+
+
+}
 
 
     difficultyButtons.style.display =
