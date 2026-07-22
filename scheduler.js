@@ -173,3 +173,100 @@ function markWrong(word){
         date.toISOString();
 
 }
+
+
+// =============================
+// Свободная тренировка
+// =============================
+
+
+function getFreeWords(words){
+
+
+    return [...words].sort(
+        (a,b)=>{
+
+
+            const scoreA =
+                getDifficultyScore(a);
+
+
+            const scoreB =
+                getDifficultyScore(b);
+
+
+
+            return scoreB - scoreA;
+
+
+        }
+    );
+
+}
+
+
+
+
+function getDifficultyScore(word){
+
+
+    let score = 0;
+
+
+
+    // ошибки важнее всего
+
+    score +=
+        word.mistakes * 5;
+
+
+
+    // низкий уровень = сложнее
+
+    score +=
+        (5 - word.level);
+
+
+
+    // давно не повторяли
+
+    if(word.nextReview){
+
+
+        const review =
+            new Date(
+                word.nextReview
+            );
+
+
+        const now =
+            new Date();
+
+
+
+        const days =
+            Math.floor(
+                (
+                    now - review
+                )
+                /
+                86400000
+            );
+
+
+
+        if(days > 0){
+
+            score += days;
+
+        }
+
+
+    }
+
+
+
+    return score;
+
+
+}
