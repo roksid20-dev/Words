@@ -16,6 +16,12 @@ const wordsList = document.getElementById("wordsList");
 const searchInput = document.getElementById("searchWords");
 const wordCount =
     document.getElementById("wordCount");
+const reviewCount =
+    document.getElementById("reviewCount");
+
+
+const newCount =
+    document.getElementById("newCount");
 
 const editModal = document.getElementById("editModal");
 
@@ -120,6 +126,36 @@ function updateStats(){
             words.length;
 
     }
+
+}
+
+function updateTodayStats(){
+
+
+    const todayWords =
+        getTodayWords(words);
+
+
+
+    if(reviewCount){
+
+        reviewCount.textContent =
+            todayWords.length;
+
+    }
+
+
+
+    if(newCount){
+
+        newCount.textContent =
+            words.filter(
+                word =>
+                word.level === 0
+            ).length;
+
+    }
+
 
 }
 
