@@ -64,7 +64,7 @@ document.getElementById(
 );
 
 
-const stopTraining =
+const stopTrainingButton =
 document.getElementById(
     "stopTraining"
 );
