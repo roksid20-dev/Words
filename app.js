@@ -15,6 +15,18 @@ const importButton = document.getElementById("importButton");
 const wordsList = document.getElementById("wordsList");
 const searchInput = document.getElementById("searchWords");
 
+const editModal = document.getElementById("editModal");
+
+const editEnglish = document.getElementById("editEnglish");
+
+const editRussian = document.getElementById("editRussian");
+
+const saveEditButton = document.getElementById("saveEdit");
+
+const cancelEditButton = document.getElementById("cancelEdit");
+
+
+let editingIndex = null;
 
 
 // Получаем слова
@@ -286,34 +298,25 @@ function deleteWord(index){
 function editWord(index){
 
 
-    const word =
-        words[index];
+    const word = words[index];
 
 
-    const newTranslation =
-        prompt(
-            "Изменить перевод:",
-            word.russian
-        );
+    editingIndex = index;
 
 
-    if(newTranslation){
+    editEnglish.value =
+        word.english;
 
 
-        word.russian =
-            newTranslation.trim();
+    editRussian.value =
+        word.russian;
 
 
-        saveWords();
 
-        renderWords();
-
-
-    }
-
+    editModal.style.display =
+        "flex";
 
 }
-
 
 
 // =========================
@@ -424,6 +427,56 @@ searchInput.addEventListener(
 
 
 
+saveEditButton.addEventListener(
+    "click",
+    ()=>{
+
+
+        if(editingIndex === null){
+            return;
+        }
+
+
+        words[editingIndex].english =
+            editEnglish.value.trim();
+
+
+        words[editingIndex].russian =
+            editRussian.value.trim();
+
+
+
+        saveWords();
+
+        renderWords();
+
+
+        editModal.style.display =
+            "none";
+
+
+        editingIndex = null;
+
+
+    }
+);
+
+
+
+cancelEditButton.addEventListener(
+    "click",
+    ()=>{
+
+
+        editModal.style.display =
+            "none";
+
+
+        editingIndex = null;
+
+
+    }
+);
 
 // старт
 
