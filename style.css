@@ -409,3 +409,22 @@ footer {
     font-size: 17px;
 
 }
+
+.difficulty-buttons {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+}
+
+
+.difficulty-buttons button {
+
+    margin: 5px;
+
+    width: auto;
+
+    padding: 12px 18px;
+
+}
