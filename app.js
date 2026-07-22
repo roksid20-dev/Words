@@ -195,6 +195,9 @@ function checkAnswer(){
 
         resultElement.textContent =
             "✅ Правильно!";
+        markCorrect(currentWord);
+
+saveWords();
 
 
     } else {
@@ -202,6 +205,9 @@ function checkAnswer(){
 
         resultElement.textContent =
             "❌ Ответ: " + currentWord.russian;
+        markWrong(currentWord);
+
+saveWords();
 
     }
 
