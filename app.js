@@ -199,8 +199,25 @@ function showWord(){
     }
 
 
-const todayWords =
-    getTodayWords(words);
+let todayWords;
+
+
+if(trainingMode === "smart"){
+
+
+    todayWords =
+        getTodayWords(words);
+
+
+}
+else {
+
+
+    todayWords =
+        getFreeWords(words);
+
+
+}
 
 
 
