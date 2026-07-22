@@ -705,6 +705,65 @@ cancelEditButton.addEventListener(
 
 
 }
+    hardButton.addEventListener(
+    "click",
+    ()=>{
+
+
+        markWrong(currentWord);
+
+        saveWords();
+
+        nextWord();
+
+
+    }
+);
+
+
+
+normalButton.addEventListener(
+    "click",
+    ()=>{
+
+
+        markCorrect(currentWord);
+
+        saveWords();
+
+        nextWord();
+
+
+    }
+);
+
+
+
+easyButton.addEventListener(
+    "click",
+    ()=>{
+
+
+        currentWord.level += 2;
+
+
+        if(currentWord.level > 5){
+
+            currentWord.level = 5;
+
+        }
+
+
+        markCorrect(currentWord);
+
+
+        saveWords();
+
+        nextWord();
+
+
+    }
+);
 // старт
 
 renderWords();
