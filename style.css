@@ -381,3 +381,31 @@ footer {
     margin-top: 5px;
 
 }
+
+.today-stats {
+
+    margin-top: 15px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+}
+
+
+.today-stats h3 {
+
+    margin-top: 0;
+
+}
+
+
+.today-stats div {
+
+    margin-top: 10px;
+
+    font-size: 17px;
+
+}
