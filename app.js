@@ -381,29 +381,124 @@ importButton.addEventListener(
 
 
 
+        let added = 0;
+
+        let skipped = 0;
+
+
+
         lines.forEach(line=>{
 
 
-            const parts =
-                line.split("-");
+            line = line.trim();
 
 
 
-            if(parts.length >= 2){
+            if(!line){
+                return;
+            }
+
+
+
+            let parts;
+
+
+
+            if(line.includes("-")){
+
+
+                parts =
+                    line.split("-");
+
+
+            } 
+            else if(line.includes(";")){
+
+
+                parts =
+                    line.split(";");
+
+
+            }
+            else {
+
+
+                parts =
+                    line.split(/\s+/);
+
+            }
+
+
+
+            if(parts.length < 2){
+
+                return;
+
+            }
+
+
+
+            const english =
+                parts[0]
+                .trim();
+
+
+
+            const russian =
+                parts
+                .slice(1)
+                .join(" ")
+                .trim();
+
+
+
+            const exists =
+                words.some(
+                    word =>
+                    word.english
+                    .toLowerCase()
+                    ===
+                    english
+                    .toLowerCase()
+                );
+
+
+
+            if(exists){
+
+
+                skipped++;
+
+
+            }
+            else {
 
 
                 words.push({
 
-                    english:
-                        parts[0].trim(),
+                    english,
 
-                    russian:
-                        parts[1].trim()
+                    russian,
+
+                    level:0,
+
+                    nextReview:
+                    new Date()
+                    .toISOString(),
+
+                    correctAnswers:0,
+
+                    mistakes:0
 
                 });
 
 
+
+                added++;
+
+
             }
+
 
 
         });
@@ -412,11 +507,25 @@ importButton.addEventListener(
 
         saveWords();
 
-
         renderWords();
+
+        updateStats();
+
 
 
         importArea.value = "";
+
+
+
+        alert(
+
+            "Добавлено: "
+            + added
+            +
+            "\nПропущено дублей: "
+            + skipped
+
+        );
 
 
     }
