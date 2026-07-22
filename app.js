@@ -216,20 +216,15 @@ function showWord(){
 let todayWords;
 
 
-if(trainingMode === "smart"){
-
+if(trainingStarted){
 
     todayWords =
-        getTodayWords(words);
-
+        trainingWords;
 
 }
 else {
 
-
-    todayWords =
-        getFreeWords(words);
-
+    return;
 
 }
 
