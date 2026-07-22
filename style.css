@@ -268,3 +268,86 @@ footer {
     background: #34c759;
 
 }
+
+/* =====================
+   Окно редактирования
+===================== */
+
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.35);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+
+
+.modal-content {
+
+    background: white;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.2);
+
+}
+
+
+
+.modal-content h3 {
+
+    margin-top: 0;
+
+    text-align: center;
+
+}
+
+
+
+.modal-content label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    color: #6e6e73;
+
+}
+
+
+
+.modal-content button {
+
+    margin-top: 15px;
+
+}
+
+
+
+.cancel {
+
+    background: #8e8e93;
+
+}
