@@ -907,6 +907,17 @@ function stopTraining(){
 
 
 }
+
+startTraining.addEventListener(
+    "click",
+    startTraining
+);
+
+
+stopTraining.addEventListener(
+    "click",
+    stopTraining
+);
 // старт
 
 renderWords();
