@@ -58,7 +58,7 @@ const smartMode =
 
 const freeMode =
     document.getElementById("freeMode");
-const startTraining =
+const startTrainingButton =
 document.getElementById(
     "startTraining"
 );
