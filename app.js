@@ -679,7 +679,32 @@ cancelEditButton.addEventListener(
 
     }
 );
+    function nextWord(){
 
+
+    difficultyButtons.style.display =
+        "none";
+
+
+    currentIndex++;
+
+
+    const todayWords =
+        getTodayWords(words);
+
+
+
+    if(currentIndex >= todayWords.length){
+
+        currentIndex = 0;
+
+    }
+
+
+    showWord();
+
+
+}
 // старт
 
 renderWords();
