@@ -8,16 +8,7 @@ let trainingStarted = false;
 
 let trainingWords = [];
 
-const startTraining =
-document.getElementById(
-    "startTraining"
-);
 
-
-const stopTraining =
-document.getElementById(
-    "stopTraining"
-);
 const wordElement = document.getElementById("word");
 const answerInput = document.getElementById("answer");
 const checkButton = document.getElementById("check");
@@ -67,6 +58,16 @@ const smartMode =
 
 const freeMode =
     document.getElementById("freeMode");
+const startTraining =
+document.getElementById(
+    "startTraining"
+);
+
+
+const stopTraining =
+document.getElementById(
+    "stopTraining"
+);
 
 
 let editingIndex = null;
