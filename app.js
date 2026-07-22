@@ -35,6 +35,33 @@ let words = JSON.parse(
     localStorage.getItem("wordflow_words")
 ) || [];
 
+// Добавляем новые параметры старым словам
+
+words = words.map(word => {
+
+    return {
+
+        ...word,
+
+        level:
+            word.level ?? 0,
+
+        nextReview:
+            word.nextReview ??
+            new Date().toISOString(),
+
+        correctAnswers:
+            word.correctAnswers ?? 0,
+
+        mistakes:
+            word.mistakes ?? 0
+
+    };
+
+});
+
+
+saveWords();
 
 // текущее слово
 
