@@ -140,8 +140,25 @@ function showWord(){
     }
 
 
-    currentWord =
-        words[currentIndex];
+const todayWords =
+    getTodayWords(words);
+
+
+
+if(todayWords.length === 0){
+
+    wordElement.textContent =
+        "🎉 На сегодня всё!";
+
+
+    return;
+
+}
+
+
+
+currentWord =
+    todayWords[currentIndex % todayWords.length];
 
 
     wordElement.textContent =
