@@ -35,6 +35,35 @@ const bulkAddButton =
         "bulkAddButton"
     );
 
+const editWordSection =
+    document.getElementById(
+        "editWordSection"
+    );
+
+
+const editEnglishInput =
+    document.getElementById(
+        "editEnglishInput"
+    );
+
+
+const editRussianInput =
+    document.getElementById(
+        "editRussianInput"
+    );
+
+
+const saveEditButton =
+    document.getElementById(
+        "saveEditButton"
+    );
+
+
+const cancelEditButton =
+    document.getElementById(
+        "cancelEditButton"
+    );
+
 let editingId = null;
 
 
