@@ -389,3 +389,20 @@ button:active {
     width: 160px;
 
 }
+
+.add-word button {
+
+    display: block;
+
+    margin: 10px auto;
+
+}
+
+
+.add-word input {
+
+    display:block;
+
+    width:100%;
+
+}
