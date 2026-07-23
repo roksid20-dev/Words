@@ -371,6 +371,8 @@ function markCorrect(
 
         word.level++;
 
+
+
     }
 
 
@@ -401,6 +403,12 @@ word.nextReview =
     )
     .toISOString();
 
+
+trainingWrong++;
+
+trainingCurrent++;
+
+updateTrainingProgress();
 }
 
 
@@ -438,6 +446,10 @@ function markWrong(
     word.nextReview =
         new Date()
         .toISOString();
+
+    trainingCorrect++;
+    trainingCurrent++;
+    updateTrainingProgress();
 
 
 }
