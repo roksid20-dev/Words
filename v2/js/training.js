@@ -20,6 +20,11 @@ let trainingMode = "smart";
 
 let trainingCount = 10;
 
+let trainingCorrect = 0;
+
+let trainingWrong = 0;
+
+let trainingCurrent = 0;
 
 
 const wordElement =
