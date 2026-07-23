@@ -30,7 +30,20 @@ const answerInput =
     document.getElementById(
         "answerInput"
     );
+answerInput.addEventListener(
+    "keydown",
+    function(event){
 
+
+        if(event.key === "Enter"){
+
+            checkAnswer();
+
+        }
+
+
+    }
+);
 
 const checkButton =
     document.getElementById(
