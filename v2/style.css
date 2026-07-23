@@ -103,19 +103,22 @@ input {
 
     width: 100%;
 
-    padding: 14px 16px;
+    height: 42px;
+
+    padding: 0 14px;
 
     margin-bottom: 12px;
 
-    border-radius: 12px;
+    border-radius: 10px;
 
     border:
-
         1px solid #ddd;
 
     font-size: 16px;
 
     outline: none;
+
+    box-sizing: border-box;
 
 }
 
@@ -132,13 +135,17 @@ input:focus {
 
 button {
 
-    width: 100%;
+    width: auto;
 
-    padding: 14px;
+    min-width: 140px;
+
+    height: 42px;
+
+    padding: 0 18px;
 
     border: none;
 
-    border-radius: 12px;
+    border-radius: 10px;
 
     background: #222;
 
