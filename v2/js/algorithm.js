@@ -26,31 +26,20 @@ function getSmartWords(words) {
 
 
 
-    return words
-        .filter(word => {
+    return [...words]
+        .sort(
+            (a,b)=>{
 
 
-            const reviewDate =
-                new Date(
-                    word.nextReview
+                return (
+                    calculatePriority(b)
+                    -
+                    calculatePriority(a)
                 );
 
 
-            return reviewDate <= now;
-
-
-        })
-        .sort((a,b)=>{
-
-
-            return (
-                calculatePriority(b)
-                -
-                calculatePriority(a)
-            );
-
-
-        });
+            }
+        );
 
 
 }
