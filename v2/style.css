@@ -80,17 +80,27 @@ section {
 
     background: white;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
-    padding: 24px;
+    padding: 26px;
 
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.07);
+
+    transition: .2s;
 
 }
 
+section:hover {
 
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.09);
+
+}
 
 
 h2 {
@@ -161,6 +171,8 @@ button {
     cursor: pointer;
 
     transition: .2s;
+    
+    letter-spacing: .2px;
 
 }
 
@@ -190,13 +202,26 @@ button:active {
 
     align-items:center;
 
-    padding:15px;
+    padding:16px;
 
-    border-radius:14px;
+    border-radius:16px;
 
-    background:#f7f7f7;
+    background:#fff;
 
-    margin-bottom:10px;
+    border:1px solid #edf0f7;
+
+    margin-bottom:12px;
+
+    transition:.2s;
+
+}
+
+.word-card:hover {
+
+    border-color:#4F7CFF;
+
+    box-shadow:
+        0 5px 15px rgba(79,124,255,.12);
 
 }
 
@@ -466,5 +491,22 @@ textarea:focus {
     font-size: 17px;
 
     font-weight: 500;
+
+}
+
+#toggleWordsButton {
+
+    background:#eef3ff;
+
+    color:#4F7CFF;
+
+    min-width:120px;
+
+}
+
+
+#toggleWordsButton:hover {
+
+    background:#dfe8ff;
 
 }
