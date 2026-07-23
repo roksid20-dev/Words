@@ -329,3 +329,29 @@ button:active {
     margin-bottom: 8px;
 
 }
+
+#trainingArea {
+
+    max-width: 400px;
+
+}
+
+
+#answerInput {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    box-sizing: border-box;
+
+}
+
+
+#checkButton {
+
+    width: 160px;
+
+    margin-top: 10px;
+
+}
