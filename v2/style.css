@@ -452,3 +452,19 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(79,124,255,.15);
 
 }
+
+#wordsStats {
+
+    margin-bottom: 20px;
+
+}
+
+#wordsStats p {
+
+    margin: 8px 0;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+}
