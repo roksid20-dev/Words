@@ -406,3 +406,23 @@ button:active {
     width:100%;
 
 }
+
+#addWordButton {
+
+    display: block;
+
+    margin: 10px auto;
+
+}
+
+
+#englishInput,
+#russianInput {
+
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
