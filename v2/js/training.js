@@ -292,7 +292,17 @@ function markWrong(
 ){
 
 
-    word.stats[direction].wrong++;
+    const key =
+        direction === "en-ru"
+        ?
+        "enRu"
+        :
+        "ruEn";
+
+
+
+    word.stats[key].wrong++;
+
 
 
     if(word.level > 0){
