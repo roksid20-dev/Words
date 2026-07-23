@@ -240,6 +240,84 @@ function chooseDirection(word){
     }
 
 }
+
+function upgradeWords(words){
+
+
+    return words.map(word=>{
+
+
+        if(!word.level){
+
+            word.level = 1;
+
+        }
+
+
+
+        if(!word.memory){
+
+
+            word.memory = {
+
+
+                enRu:{
+                    correct:0,
+                    wrong:0
+                },
+
+
+                ruEn:{
+                    correct:0,
+                    wrong:0
+                }
+
+
+            };
+
+
+        }
+
+
+
+        if(!word.memory.enRu){
+
+
+            word.memory.enRu = {
+
+                correct:0,
+                wrong:0
+
+            };
+
+
+        }
+
+
+
+        if(!word.memory.ruEn){
+
+
+            word.memory.ruEn = {
+
+                correct:0,
+                wrong:0
+
+            };
+
+
+        }
+
+
+
+        return word;
+
+
+    });
+
+
+}
+
 function showWord(){
 
 
