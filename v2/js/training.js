@@ -54,7 +54,6 @@ function startTraining(){
     trainingActive = true;
 
 
-    resetTrainingMemory();
 
 
     trainingWords =
