@@ -104,7 +104,7 @@ trainingWrong = 0;
 
 trainingCurrent = 0;
 
-updateTrainingProgress();
+
 
     if(trainingMode === "quick"){
 
