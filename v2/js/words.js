@@ -533,6 +533,7 @@ bulkInput.addEventListener(
 
 
 renderWords();
+updateWordsStats();
 
 function updateWordsStats(){
 
