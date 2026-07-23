@@ -304,3 +304,28 @@ button:active {
     flex-shrink: 0;
 
 }
+
+.training-settings input[type="radio"] {
+
+    width: 16px;
+
+    height: 16px;
+
+    margin-right: 6px;
+
+}
+
+
+.training-settings label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+
+}
