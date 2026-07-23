@@ -447,6 +447,10 @@ addWordButton.addEventListener(
     addOrUpdateWord
 );
 
+bulkAddButton.addEventListener(
+    "click",
+    addBulkWords
+);
 
 
 searchInput.addEventListener(
