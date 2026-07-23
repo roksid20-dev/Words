@@ -123,6 +123,24 @@ else{
 
 
 
+if(
+    trainingCount !== null
+){
+
+    trainingWords =
+        trainingWords.slice(
+            0,
+            trainingCount
+        );
+
+}
+
+console.log(
+    "Слова в тренировке:",
+    trainingWords.length
+);
+
+
     nextTrainingWord();
 
 }
