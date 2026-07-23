@@ -56,6 +56,11 @@ function startTraining(){
         getSmartWords(words);
 
 
+    console.log(
+        "Слова для тренировки:",
+        trainingWords
+    );
+
 
     nextTrainingWord();
 
