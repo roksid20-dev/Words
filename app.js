@@ -79,11 +79,12 @@ let trainingMode =
 
 // Получаем слова
 
+// Получаем слова
+
 let words = JSON.parse(
     localStorage.getItem("wordflow_words")
 ) || [];
-words = upgradeWords(words);
-saveWords();
+
 
 // Добавляем новые параметры старым словам
 
@@ -94,7 +95,7 @@ words = words.map(word => {
         ...word,
 
         level:
-            word.level ?? 0,
+            word.level ?? 1,
 
         nextReview:
             word.nextReview ??
@@ -111,8 +112,14 @@ words = words.map(word => {
 });
 
 
-saveWords();
+// Добавляем структуру памяти
 
+words = upgradeWords(words);
+
+
+// Сохраняем обновленные данные
+
+saveWords();
 // текущее слово
 
 let currentWord = null;
