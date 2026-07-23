@@ -249,7 +249,17 @@ function markCorrect(
 ){
 
 
-    word.stats[direction].correct++;
+    const key =
+        direction === "en-ru"
+        ?
+        "enRu"
+        :
+        "ruEn";
+
+
+
+    word.stats[key].correct++;
+
 
 
     if(word.level < 5){
@@ -269,9 +279,7 @@ function markCorrect(
         .toISOString();
 
 
-
 }
-
 
 
 
