@@ -445,6 +445,9 @@ else {
         markWrong(currentWord);
 
         saveWords();
+        currentIndex++;
+
+showWord();
 
 
     }
