@@ -56,6 +56,11 @@ let editingId = null;
  */
 function renderWords(list = words) {
 
+    console.log(
+    "renderWords вызван",
+    list.length
+);
+
 
     wordsList.innerHTML = "";
 
