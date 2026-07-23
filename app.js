@@ -310,15 +310,36 @@ function checkAnswer(){
 
 
     const answer =
-        answerInput.value
-        .trim()
-        .toLowerCase();
+    answerInput.value
+    .trim()
+    .toLowerCase();
 
 
-    const correct =
+
+let correct;
+
+
+
+if(currentDirection === "en-ru"){
+
+
+    correct =
         currentWord.russian
         .trim()
         .toLowerCase();
+
+
+}
+else {
+
+
+    correct =
+        currentWord.english
+        .trim()
+        .toLowerCase();
+
+
+}
 
 
 
