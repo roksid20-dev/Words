@@ -16,7 +16,9 @@ let currentWord = null;
 
 let currentDirection = null;
 
+let trainingMode = "smart";
 
+let trainingCount = 10;
 
 
 
