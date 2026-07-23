@@ -8,6 +8,8 @@ let trainingStarted = false;
 
 let trainingWords = [];
 
+let currentDirection = "en-ru";
+
 
 const wordElement = document.getElementById("word");
 const answerInput = document.getElementById("answer");
