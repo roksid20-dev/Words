@@ -56,6 +56,12 @@ function createWord(english, russian) {
 
         level: 0,
 
+        interval: 0,
+
+        ease: 2.5,
+
+        repetitions: 0,
+
         nextReview: now,
 
         stats: createStats()
@@ -63,7 +69,6 @@ function createWord(english, russian) {
     };
 
 }
-
 /**
  * Проверяет, соответствует ли объект новой модели
  */
