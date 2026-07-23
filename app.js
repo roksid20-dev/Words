@@ -434,6 +434,20 @@ else {
 
 
         markCorrect(currentWord);
+        if(currentDirection === "en-ru"){
+
+
+    currentWord.memory.enRu.correct++;
+
+
+}
+else {
+
+
+    currentWord.memory.ruEn.correct++;
+
+
+}
 
         saveWords();
 
@@ -447,6 +461,20 @@ else {
 
 
         markWrong(currentWord);
+        if(currentDirection === "en-ru"){
+
+
+    currentWord.memory.enRu.wrong++;
+
+
+}
+else {
+
+
+    currentWord.memory.ruEn.wrong++;
+
+
+}
 
         saveWords();
         currentIndex++;
