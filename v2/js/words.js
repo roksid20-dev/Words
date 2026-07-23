@@ -204,7 +204,10 @@ function addOrUpdateWord(){
     }
 
 
-
+console.log(
+    "После добавления:",
+    words
+);
     addWord(
         words,
         english,
