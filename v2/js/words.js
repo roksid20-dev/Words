@@ -286,6 +286,7 @@ function addBulkWords(){
     bulkInput.value = "";
 
     renderWords();
+    updateWordsStats();
 
     alert(
         `Добавлено: ${added}\nПропущено: ${skipped}`
