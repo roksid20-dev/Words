@@ -79,23 +79,61 @@ function calculatePriority(word){
 
 
 
+    const now =
+        new Date();
+
+
+    const review =
+        new Date(
+            word.nextReview
+        );
+
+
+
+    /*
+    Просроченные слова
+    */
+
+    if(review <= now){
+
+        priority += 10;
+
+    }
+
+
+
+    /*
+    Ошибки
+    */
+
+    priority +=
+        word.stats.enRu.wrong * 5;
+
+
+    priority +=
+        word.stats.ruEn.wrong * 5;
+
+
+
+    /*
+    Новые слова
+    */
+
+    if(word.level === 0){
+
+        priority += 8;
+
+    }
+
+
+
     /*
     Чем ниже уровень,
-    тем чаще повторяем
+    тем важнее
     */
 
     priority +=
         (5 - word.level);
-
-
-
-    /*
-    Ошибки увеличивают важность
-    */
-
-    priority +=
-        word.stats.enRu.wrong +
-        word.stats.ruEn.wrong;
 
 
 
