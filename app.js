@@ -877,6 +877,7 @@ cancelEditButton.addEventListener(
 
 
     currentIndex++;
+    currentDirection = null;
 
 
     const todayWords =
