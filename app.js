@@ -272,8 +272,22 @@ function showWord(){
 
 
 
+    if(currentDirection === "en-ru"){
+
+
     wordElement.textContent =
         currentWord.english;
+
+
+}
+else {
+
+
+    wordElement.textContent =
+        currentWord.russian;
+
+
+}
 
 
 
