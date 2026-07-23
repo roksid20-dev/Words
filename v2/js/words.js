@@ -64,6 +64,11 @@ const cancelEditButton =
         "cancelEditButton"
     );
 
+const toggleWordsButton =
+    document.getElementById(
+        "toggleWordsButton"
+    );
+
 let editingId = null;
 
 
