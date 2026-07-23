@@ -426,3 +426,26 @@ button:active {
     box-sizing: border-box;
 
 }
+
+#answerInput {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 10px auto;
+
+}
+
+
+#checkButton {
+
+    display: block;
+
+    margin: 10px auto;
+
+    width: 160px;
+
+}
