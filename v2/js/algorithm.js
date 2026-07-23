@@ -337,3 +337,41 @@ function getNextWord(words){
 
 
 }
+
+function getAllWords(words){
+
+    return [...words];
+
+}
+
+function getQuickWords(words){
+
+
+    const sorted =
+        [...words].sort(
+            (a,b)=>{
+
+
+                const aScore =
+                    a.level * -1 +
+                    a.stats.enRu.wrong +
+                    a.stats.ruEn.wrong;
+
+
+                const bScore =
+                    b.level * -1 +
+                    b.stats.enRu.wrong +
+                    b.stats.ruEn.wrong;
+
+
+                return bScore - aScore;
+
+
+            }
+        );
+
+
+    return sorted;
+
+
+}
