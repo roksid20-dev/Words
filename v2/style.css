@@ -1,0 +1,271 @@
+/*
+WordFlow
+style.css
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f6fa;
+
+    color: #222;
+
+}
+
+
+
+.app {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+}
+
+
+
+header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+header h1 {
+
+    margin-bottom: 5px;
+
+    font-size: 34px;
+
+}
+
+
+header p {
+
+    margin-top: 0;
+
+    color: #777;
+
+}
+
+
+
+
+
+section {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.06);
+
+}
+
+
+
+
+h2 {
+
+    margin-top: 0;
+
+    font-size: 20px;
+
+}
+
+
+
+
+input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    border:
+
+        1px solid #ddd;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+
+input:focus {
+
+    border-color: #777;
+
+}
+
+
+
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+
+button:active {
+
+    transform: scale(0.98);
+
+}
+
+
+
+
+.word-card {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background: #f7f7f7;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.word-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.word-text .english {
+
+    font-weight: 600;
+
+}
+
+
+.word-text .russian {
+
+    color: #666;
+
+}
+
+
+
+.word-actions button {
+
+    width: auto;
+
+    padding:
+
+        8px 12px;
+
+    margin-left: 5px;
+
+    background:
+
+        #ddd;
+
+    color:
+
+        #222;
+
+    font-size:
+
+        14px;
+
+}
+
+
+
+.empty {
+
+    text-align:
+
+        center;
+
+    color:
+
+        #777;
+
+    padding:
+
+        20px;
+
+}
+
+
+
+/* мобильная адаптация */
+
+@media(max-width:600px){
+
+    .app{
+
+        padding:15px;
+
+    }
+
+
+    header h1{
+
+        font-size:28px;
+
+    }
+
+}
