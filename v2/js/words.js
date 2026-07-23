@@ -44,7 +44,15 @@ const searchInput =
         "searchInput"
     );
 
+const bulkInput =
+    document.getElementById(
+        "bulkInput"
+    );
 
+const bulkAddButton =
+    document.getElementById(
+        "bulkAddButton"
+    );
 
 let editingId = null;
 
