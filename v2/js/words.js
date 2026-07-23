@@ -210,28 +210,18 @@ function addOrUpdateWord(){
 
 
 console.log(
-    "После добавления:",
+    "Перед добавлением:",
     words
 );
-    addWord(
-        words,
-        english,
-        russian
-    );
 
+
+addWord(
+    words,
+    english,
+    russian
+);
 
 }
-
-
-        addWord(
-            words,
-            english,
-            russian
-        );
-
-
-    }
-
 
 
     englishInput.value = "";
