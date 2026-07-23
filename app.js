@@ -82,6 +82,7 @@ let trainingMode =
 let words = JSON.parse(
     localStorage.getItem("wordflow_words")
 ) || [];
+words = upgradeWords(words);
 
 // Добавляем новые параметры старым словам
 
