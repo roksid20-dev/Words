@@ -347,7 +347,8 @@ function showWord(){
 
     }
 
-
+console.log("trainingWords:", trainingWords.length);
+console.log("currentIndex:", currentIndex);
 
     currentWord =
         trainingWords[
