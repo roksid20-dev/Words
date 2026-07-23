@@ -323,7 +323,6 @@ function editWord(id){
         );
 
 
-
     if(!word){
 
         return;
@@ -331,26 +330,22 @@ function editWord(id){
     }
 
 
-
-    englishInput.value =
-        word.english;
-
-
-    russianInput.value =
-        word.russian;
-
-
-
     editingId = id;
 
 
+    editEnglishInput.value =
+        word.english;
 
-    addWordButton.textContent =
-        "Сохранить";
+
+    editRussianInput.value =
+        word.russian;
+
+
+    editWordSection.style.display =
+        "block";
 
 
 }
-
 
 
 
