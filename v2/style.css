@@ -278,13 +278,6 @@ button:active {
 }
 
 
-#answerInput {
-
-    flex: 1;
-
-    width: auto;
-
-}
 
 
 #checkButton {
@@ -327,15 +320,6 @@ button:active {
 }
 
 
-#answerInput {
-
-    width: 100%;
-
-    max-width: 400px;
-
-    box-sizing: border-box;
-
-}
 
 
 #checkButton {
@@ -364,6 +348,8 @@ button:active {
     width: 100%;
 
     max-width: 400px;
+
+    height: 42px;
 
     margin: 10px auto;
 
@@ -419,17 +405,6 @@ button:active {
 
 }
 
-#answerInput {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 400px;
-
-    margin: 10px auto;
-
-}
 
 
 #checkButton {
