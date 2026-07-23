@@ -336,10 +336,7 @@ function search(){
 
 
 
-addWordButton.addEventListener(
-    "click",
-    addOrUpdateWord
-);
+
 
 bulkAddButton.addEventListener(
     "click",
