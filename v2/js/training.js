@@ -308,3 +308,18 @@ function stopTraining(){
 
 
 }
+
+document
+    .getElementById(
+        "startTrainingButton"
+    )
+    .addEventListener(
+        "click",
+        startTraining
+    );
+
+
+checkButton.addEventListener(
+    "click",
+    checkAnswer
+);
