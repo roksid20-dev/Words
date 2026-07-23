@@ -1,3 +1,5 @@
+console.log("training.js загружен");
+
 /*
 WordFlow
 training.js
