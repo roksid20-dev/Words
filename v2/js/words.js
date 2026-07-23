@@ -69,7 +69,7 @@ const toggleWordsButton =
         "toggleWordsButton"
     );
 
-let wordsHidden = false;
+let wordsHidden = true;
 let editingId = null;
 
 
@@ -534,6 +534,9 @@ bulkInput.addEventListener(
 
 
 renderWords();
+wordsList.style.display = "none";
+
+toggleWordsButton.textContent = "Показать";
 updateWordsStats();
 
 function updateWordsStats(){
