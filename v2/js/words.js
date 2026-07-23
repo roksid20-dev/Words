@@ -348,6 +348,73 @@ function editWord(id){
 }
 
 
+function saveEditedWord(){
+
+
+    if(!editingId){
+
+        return;
+
+    }
+
+
+    const word =
+        words.find(
+            w => w.id === editingId
+        );
+
+
+    if(!word){
+
+        return;
+
+    }
+
+
+    const english =
+        editEnglishInput.value.trim();
+
+
+    const russian =
+        editRussianInput.value.trim();
+
+
+
+    if(!english || !russian){
+
+        alert(
+            "Введите слово и перевод"
+        );
+
+        return;
+
+    }
+
+
+
+    word.english =
+        english;
+
+
+    word.russian =
+        russian;
+
+
+
+    saveWords(words);
+
+
+    renderWords();
+
+
+    editWordSection.style.display =
+        "none";
+
+
+    editingId = null;
+
+
+}
 
 
 /**
