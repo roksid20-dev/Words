@@ -144,6 +144,12 @@ function nextTrainingWord(){
  * Проверка ответа
  */
 function checkAnswer(){
+    
+    currentWord =
+    words.find(
+        word =>
+        word.id === currentWord.id
+    );
 
 
     if(!currentWord){
