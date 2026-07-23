@@ -325,7 +325,6 @@ function search(){
         );
 
 
-    renderWords(result);
 
 
 }
