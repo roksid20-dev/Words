@@ -96,8 +96,30 @@ trainingCount =
 
 
 
+    if(trainingMode === "quick"){
+
+
+    trainingWords =
+        getQuickWords(words);
+
+
+}
+else if(trainingMode === "all"){
+
+
+    trainingWords =
+        getAllWords(words);
+
+
+}
+else{
+
+
     trainingWords =
         getSmartWords(words);
+
+
+}
 
 
 
