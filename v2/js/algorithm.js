@@ -197,9 +197,7 @@ function getNextWord(words){
 
 
 
-    if(
-        available.length === 0
-    ){
+    if(available.length === 0){
 
         available = words;
 
@@ -207,12 +205,57 @@ function getNextWord(words){
 
 
 
+    const weighted = [];
+
+
+
+    available.forEach(word => {
+
+
+        let weight = 1;
+
+
+
+        weight +=
+            (5 - word.level);
+
+
+
+        weight +=
+            word.stats.enRu.wrong +
+            word.stats.ruEn.wrong;
+
+
+
+        if(word.level >= 5){
+
+            weight = 1;
+
+        }
+
+
+
+        for(
+            let i = 0;
+            i < weight;
+            i++
+        ){
+
+            weighted.push(word);
+
+        }
+
+
+    });
+
+
+
     const word =
-        available[
+        weighted[
             Math.floor(
                 Math.random()
                 *
-                available.length
+                weighted.length
             )
         ];
 
@@ -224,14 +267,6 @@ function getNextWord(words){
 
 
     return word;
-
-    function resetTrainingMemory(){
-
-    lastWordId = null;
-
-    lastDirection = null;
-
-}
 
 
 }
