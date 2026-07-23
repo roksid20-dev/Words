@@ -97,9 +97,14 @@ trainingCount =
 
 
     trainingActive = true;
+    
+trainingCorrect = 0;
 
+trainingWrong = 0;
 
+trainingCurrent = 0;
 
+updateTrainingProgress();
 
     if(trainingMode === "quick"){
 
@@ -462,3 +467,45 @@ checkButton.addEventListener(
     "click",
     checkAnswer
 );
+
+function updateTrainingProgress(){
+
+
+    document.getElementById(
+        "trainingCurrent"
+    ).textContent =
+        trainingCurrent;
+
+
+
+    document.getElementById(
+        "trainingTotal"
+    ).textContent =
+        trainingWords.length;
+
+
+
+    document.getElementById(
+        "trainingCorrect"
+    ).textContent =
+        trainingCorrect;
+
+
+
+    document.getElementById(
+        "trainingWrong"
+    ).textContent =
+        trainingWrong;
+
+
+
+    document.getElementById(
+        "trainingLeft"
+    ).textContent =
+        Math.max(
+            trainingWords.length - trainingCurrent,
+            0
+        );
+
+
+}
