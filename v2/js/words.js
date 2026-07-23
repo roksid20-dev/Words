@@ -426,15 +426,13 @@ function editWord(id){
  */
 function search(){
 
-
     const result =
         searchWords(
             words,
             searchInput.value
         );
 
-
-
+    renderWords(result);
 
 }
 
