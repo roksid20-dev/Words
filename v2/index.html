@@ -1,2 +1,109 @@
 <!DOCTYPE html>
-Create v2 folder
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WordFlow</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<header>
+
+<h1>WordFlow</h1>
+
+<p>Изучение слов</p>
+
+</header>
+
+
+
+<section class="add-word">
+
+
+<h2>Добавить слово</h2>
+
+
+<input
+id="englishInput"
+type="text"
+placeholder="English"
+/>
+
+
+<input
+id="russianInput"
+type="text"
+placeholder="Русский"
+/>
+
+
+<button id="addWordButton">
+Добавить
+</button>
+
+
+</section>
+
+
+
+
+<section class="search">
+
+
+<input
+id="searchInput"
+type="text"
+placeholder="Поиск слова"
+/>
+
+
+</section>
+
+
+
+
+<section class="words">
+
+
+<h2>
+Мои слова
+</h2>
+
+
+<div id="wordsList">
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+
+<script src="js/model.js"></script>
+
+<script src="js/storage.js"></script>
+
+<script src="js/words.js"></script>
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
