@@ -237,7 +237,121 @@ function addOrUpdateWord(){
 
 }
 
+function addBulkWords(){
 
+    const text =
+        bulkInput.value.trim();
+
+    if(!text){
+
+        alert(
+            "Введите список слов"
+        );
+
+        return;
+
+    }
+
+    const lines =
+        text.split("\n");
+
+    let added = 0;
+    let skipped = 0;
+
+    lines.forEach(line => {
+
+        line = line.trim();
+
+        if(!line){
+            return;
+        }
+
+        let parts;
+
+        if(line.includes("-")){
+
+            parts =
+                line.split("-");
+
+        }
+        else if(line.includes(";")){
+
+            parts =
+                line.split(";");
+
+        }
+        else if(line.includes(":")){
+
+            parts =
+                line.split(":");
+
+        }
+        else{
+
+            parts =
+                line.split(/\s+/);
+
+            if(parts.length >= 2){
+
+                parts = [
+                    parts[0],
+                    parts.slice(1).join(" ")
+                ];
+
+            }
+
+        }
+
+        if(parts.length < 2){
+
+            skipped++;
+
+            return;
+
+        }
+
+        const english =
+            parts[0].trim();
+
+        const russian =
+            parts.slice(1)
+                 .join(" ")
+                 .trim();
+
+        const duplicate =
+            words.some(word =>
+                word.english.toLowerCase() === english.toLowerCase()
+                &&
+                word.russian.toLowerCase() === russian.toLowerCase()
+            );
+
+        if(duplicate){
+
+            skipped++;
+
+            return;
+
+        }
+
+        addWord(
+            words,
+            english,
+            russian
+        );
+
+        added++;
+
+    });
+
+    bulkInput.value = "";
+
+    renderWords();
+
+    alert(
+        `Добавлено: ${added}\nПропущено: ${skipped}`
+    );
+
+}
 
 
 
