@@ -181,7 +181,6 @@ function addOrUpdateWord(){
         editingId = null;
 
 
-
         addWordButton.textContent =
             "Добавить";
 
@@ -190,38 +189,34 @@ function addOrUpdateWord(){
     else {
 
 
-    const duplicate =
-        words.some(word =>
-            word.english.toLowerCase() === english.toLowerCase()
-            &&
-            word.russian.toLowerCase() === russian.toLowerCase()
+        const duplicate =
+            words.some(word =>
+                word.english.toLowerCase() === english.toLowerCase()
+                &&
+                word.russian.toLowerCase() === russian.toLowerCase()
+            );
+
+
+        if(duplicate){
+
+            alert(
+                "Такое слово уже есть"
+            );
+
+            return;
+
+        }
+
+
+        addWord(
+            words,
+            english,
+            russian
         );
 
-
-    if(duplicate){
-
-        alert(
-            "Такое слово уже есть"
-        );
-
-        return;
 
     }
 
-
-console.log(
-    "Перед добавлением:",
-    words
-);
-
-
-addWord(
-    words,
-    english,
-    russian
-);
-
-}
 
 
     englishInput.value = "";
@@ -231,6 +226,8 @@ addWord(
 
     renderWords();
 
+
+}
 
 
 
