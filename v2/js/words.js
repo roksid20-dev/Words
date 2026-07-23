@@ -533,3 +533,65 @@ bulkInput.addEventListener(
 
 
 renderWords();
+
+function updateWordsStats(){
+
+
+    const total =
+        words.length;
+
+
+
+    const learned =
+        words.filter(
+            word =>
+            word.level >= 5
+        ).length;
+
+
+
+    const learning =
+        words.filter(
+            word =>
+            word.level > 0 &&
+            word.level < 5
+        ).length;
+
+
+
+    const newWords =
+        words.filter(
+            word =>
+            word.level === 0
+        ).length;
+
+
+
+    document.getElementById(
+        "totalWords"
+    ).textContent =
+        total;
+
+
+
+    document.getElementById(
+        "learnedWords"
+    ).textContent =
+        learned;
+
+
+
+    document.getElementById(
+        "learningWords"
+    ).textContent =
+        learning;
+
+
+
+    document.getElementById(
+        "newWords"
+    ).textContent =
+        newWords;
+
+
+}
