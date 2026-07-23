@@ -232,57 +232,41 @@ function getNextWord(words){
 
 
 
-    const weighted = [];
+    /*
+    Сортируем по важности
+    */
+
+    available.sort(
+        (a,b)=>
+            calculatePriority(b)
+            -
+            calculatePriority(a)
+    );
 
 
 
-    available.forEach(word => {
+    /*
+    Берём первые самые важные,
+    но добавляем немного случайности
+    */
 
-
-        let weight = 1;
-
-
-
-        weight +=
-            (5 - word.level);
-
-
-
-        weight +=
-            word.stats.enRu.wrong +
-            word.stats.ruEn.wrong;
-
-
-
-        if(word.level >= 5){
-
-            weight = 1;
-
-        }
-
-
-
-        for(
-            let i = 0;
-            i < weight;
-            i++
-        ){
-
-            weighted.push(word);
-
-        }
-
-
-    });
+    const topWords =
+        available.slice(
+            0,
+            Math.min(
+                3,
+                available.length
+            )
+        );
 
 
 
     const word =
-        weighted[
+        topWords[
             Math.floor(
                 Math.random()
                 *
-                weighted.length
+                topWords.length
             )
         ];
 
