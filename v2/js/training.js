@@ -54,14 +54,12 @@ function startTraining(){
     trainingActive = true;
 
 
+    resetTrainingMemory();
+
+
     trainingWords =
         getSmartWords(words);
 
-
-    console.log(
-        "Слова для тренировки:",
-        trainingWords
-    );
 
 
     nextTrainingWord();
