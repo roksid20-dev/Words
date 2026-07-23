@@ -212,7 +212,17 @@ function checkAnswer(){
 
 
 
-    saveWords(words);
+        saveWords(words);
+
+
+    setTimeout(
+        ()=>{
+
+            nextTrainingWord();
+
+        },
+        1000
+    );
 
 
 }
