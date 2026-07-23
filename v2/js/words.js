@@ -182,6 +182,15 @@ function addBulkWords(){
                 line.split(":");
 
         }
+
+        else if(line.includes("\t")){
+
+    parts =
+        line.split("\t");
+            
+        }
+
+        
         else{
 
             parts =
