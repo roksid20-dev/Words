@@ -170,17 +170,13 @@ button:active {
 
 .word-card {
 
+    display: flex;
+
     justify-content: space-between;
 
     align-items: center;
 
     padding: 15px;
-
-    border-radius: 14px;
-
-    background: #f7f7f7;
-
-    margin-bottom: 10px;
 
 }
 
@@ -443,5 +439,26 @@ button:active {
     margin: 10px auto;
 
     width: 160px;
+
+}
+
+
+#addWordButton {
+
+    display: block !important;
+
+    width: 160px;
+
+    margin: 15px auto 0;
+
+}
+
+
+#englishInput,
+#russianInput {
+
+    display: block;
+
+    width: 100%;
 
 }
