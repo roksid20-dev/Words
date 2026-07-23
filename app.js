@@ -83,6 +83,7 @@ let words = JSON.parse(
     localStorage.getItem("wordflow_words")
 ) || [];
 words = upgradeWords(words);
+saveWords();
 
 // Добавляем новые параметры старым словам
 
