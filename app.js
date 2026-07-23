@@ -346,8 +346,12 @@ function showWord(){
             currentIndex %
             trainingWords.length
         ];
+    if(!currentDirection){
+
     currentDirection =
-    chooseDirection(currentWord);
+        chooseDirection(currentWord);
+
+}
 
 
 
