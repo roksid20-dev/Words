@@ -83,6 +83,12 @@ trainingCount =
     count === "all"
         ? null
         : Number(count);
+    console.log(
+    "Режим:",
+    trainingMode,
+    "Количество:",
+    trainingCount
+);
 
 
     trainingActive = true;
