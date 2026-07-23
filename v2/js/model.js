@@ -54,15 +54,37 @@ function createWord(english, russian) {
 
         updatedAt: now,
 
-        level: 0,
+review:{
 
-        interval: 0,
+    enRu:{
 
-        ease: 2.5,
+        level:0,
 
-        repetitions: 0,
+        interval:0,
 
-        nextReview: now,
+        ease:2.5,
+
+        repetitions:0,
+
+        nextReview:now
+
+    },
+
+    ruEn:{
+
+        level:0,
+
+        interval:0,
+
+        ease:2.5,
+
+        repetitions:0,
+
+        nextReview:now
+
+    }
+
+},
 
         stats: createStats()
 
