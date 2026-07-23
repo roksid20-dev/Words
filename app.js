@@ -203,7 +203,42 @@ function updateTodayStats(){
 // Обучение
 // =========================
 
+function chooseDirection(word){
 
+
+    let chance;
+
+
+    if(word.level <= 1){
+
+        chance = 0.2;
+
+    }
+    else if(word.level <= 3){
+
+        chance = 0.5;
+
+    }
+    else {
+
+        chance = 0.7;
+
+    }
+
+
+
+    if(Math.random() < chance){
+
+        return "ru-en";
+
+    }
+    else {
+
+        return "en-ru";
+
+    }
+
+}
 function showWord(){
 
 
@@ -232,6 +267,8 @@ function showWord(){
             currentIndex %
             trainingWords.length
         ];
+    currentDirection =
+    chooseDirection(currentWord);
 
 
 
