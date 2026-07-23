@@ -359,7 +359,8 @@ else {
 
 
         resultElement.textContent =
-            "❌ Ответ: " + currentWord.russian;
+    "❌ Ответ: " +
+    correct;
 
 
         markWrong(currentWord);
