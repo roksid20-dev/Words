@@ -225,5 +225,13 @@ function getNextWord(words){
 
     return word;
 
+    function resetTrainingMemory(){
+
+    lastWordId = null;
+
+    lastDirection = null;
+
+}
+
 
 }
