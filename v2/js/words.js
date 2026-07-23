@@ -69,6 +69,7 @@ const toggleWordsButton =
         "toggleWordsButton"
     );
 
+let wordsHidden = false;
 let editingId = null;
 
 
@@ -470,6 +471,44 @@ cancelEditButton.addEventListener(
 searchInput.addEventListener(
     "input",
     search
+);
+
+toggleWordsButton.addEventListener(
+    "click",
+    ()=>{
+
+
+        wordsHidden =
+            !wordsHidden;
+
+
+        if(wordsHidden){
+
+
+            wordsList.style.display =
+                "none";
+
+
+            toggleWordsButton.textContent =
+                "Показать";
+
+
+        }
+        else{
+
+
+            wordsList.style.display =
+                "block";
+
+
+            toggleWordsButton.textContent =
+                "Скрыть";
+
+
+        }
+
+
+    }
 );
 
 bulkInput.addEventListener(
