@@ -317,6 +317,9 @@ function checkAnswer(){
     setTimeout(
     ()=>{
         nextTrainingWord();
+        answerInput.value = "";
+        answerInput.focus();
+        
     },
     1000
 );
@@ -326,6 +329,8 @@ function checkAnswer(){
         ()=>{
 
             nextTrainingWord();
+            answerInput.value = "";
+            answerInput.focus();
 
         },
         1000
