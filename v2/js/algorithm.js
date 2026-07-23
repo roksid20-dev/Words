@@ -155,18 +155,73 @@ function calculatePriority(word){
 function chooseDirection(word){
 
 
-    const enRuMistakes =
-        word.stats.enRu.wrong;
+    const enRu =
+        word.stats.enRu;
 
 
-    const ruEnMistakes =
-        word.stats.ruEn.wrong;
+    const ruEn =
+        word.stats.ruEn;
 
 
+
+    const enRuTotal =
+        enRu.correct +
+        enRu.wrong;
+
+
+    const ruEnTotal =
+        ruEn.correct +
+        ruEn.wrong;
+
+
+
+    const enRuAccuracy =
+        enRuTotal === 0
+        ?
+        0
+        :
+        enRu.correct /
+        enRuTotal;
+
+
+
+    const ruEnAccuracy =
+        ruEnTotal === 0
+        ?
+        0
+        :
+        ruEn.correct /
+        ruEnTotal;
+
+
+
+    /*
+    Если направление совсем новое —
+    даём его попробовать
+    */
+
+    if(enRuTotal === 0){
+
+        return "en-ru";
+
+    }
+
+
+    if(ruEnTotal === 0){
+
+        return "ru-en";
+
+    }
+
+
+
+    /*
+    Выбираем слабое направление
+    */
 
     if(
-        enRuMistakes >
-        ruEnMistakes
+        enRuAccuracy <
+        ruEnAccuracy
     ){
 
         return "en-ru";
@@ -176,8 +231,8 @@ function chooseDirection(word){
 
 
     if(
-        ruEnMistakes >
-        enRuMistakes
+        ruEnAccuracy <
+        enRuAccuracy
     ){
 
         return "ru-en";
@@ -187,17 +242,18 @@ function chooseDirection(word){
 
 
     /*
-    если одинаково —
-    случайно
+    Если одинаковый уровень —
+    чередуем случайно
     */
 
     return Math.random() < 0.5
-        ? "en-ru"
-        : "ru-en";
+        ?
+        "en-ru"
+        :
+        "ru-en";
 
 
 }
-
 
 
 
