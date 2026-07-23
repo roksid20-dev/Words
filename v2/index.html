@@ -122,43 +122,81 @@ placeholder="Поиск слова"
 <h2>
 Тренировка
 </h2>
-      <div id="wordsStats">
+<div id="wordsStats">
 
+<div class="stat-card">
 
-<p>
-📚 Всего слов:
-<span id="totalWords">
+<div class="stat-icon">📚</div>
+
+<div
+class="stat-number"
+id="totalWords"
+>
 0
-</span>
-</p>
+</div>
 
-
-<p>
-🟢 Выучено:
-<span id="learnedWords">
-0
-</span>
-</p>
-
-
-<p>
-🟡 В процессе:
-<span id="learningWords">
-0
-</span>
-</p>
-
-
-<p>
-🔴 Нужно учить:
-<span id="newWords">
-0
-</span>
-</p>
-
+<div class="stat-title">
+Всего
+</div>
 
 </div>
 
+
+<div class="stat-card">
+
+<div class="stat-icon">🟢</div>
+
+<div
+class="stat-number"
+id="learnedWords"
+>
+0
+</div>
+
+<div class="stat-title">
+Выучено
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">🟡</div>
+
+<div
+class="stat-number"
+id="learningWords"
+>
+0
+</div>
+
+<div class="stat-title">
+В процессе
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">🔴</div>
+
+<div
+class="stat-number"
+id="newWords"
+>
+0
+</div>
+
+<div class="stat-title">
+Новые
+</div>
+
+</div>
+
+</div>
+      
 <div class="training-settings">
 
 
@@ -358,3 +396,57 @@ checkButton.addEventListener(
     "click",
     checkAnswer
 );
+
+#wordsStats{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+margin-bottom:25px;
+
+}
+
+.stat-card{
+
+background:white;
+
+border-radius:16px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.stat-icon{
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+.stat-number{
+
+font-size:32px;
+
+font-weight:700;
+
+color:#4F7CFF;
+
+margin-bottom:6px;
+
+}
+
+.stat-title{
+
+font-size:15px;
+
+color:#777;
+
+}
