@@ -279,8 +279,6 @@ button:active {
 
 .training-answer {
 
-    display: flex;
-
     gap: 10px;
 
     align-items: center;
@@ -353,5 +351,41 @@ button:active {
     width: 160px;
 
     margin-top: 10px;
+
+}
+
+#trainingArea {
+
+    max-width: 400px;
+
+    margin: 20px auto;
+
+    text-align: center;
+
+}
+
+
+#answerInput {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 10px auto;
+
+    box-sizing: border-box;
+
+}
+
+
+#checkButton {
+
+    display: block;
+
+    margin: 10px auto;
+
+    width: 160px;
 
 }
