@@ -443,6 +443,24 @@ bulkAddButton.addEventListener(
     addBulkWords
 );
 
+saveEditButton.addEventListener(
+    "click",
+    saveEditedWord
+);
+
+
+cancelEditButton.addEventListener(
+    "click",
+    ()=>{
+
+        editWordSection.style.display =
+            "none";
+
+
+        editingId = null;
+
+    }
+);
 
 searchInput.addEventListener(
     "input",
@@ -467,6 +485,7 @@ bulkInput.addEventListener(
 
     }
 );
+
 
 
 renderWords();
