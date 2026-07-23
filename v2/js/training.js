@@ -270,14 +270,31 @@ function markCorrect(
 
 
 
-    word.nextReview =
-        new Date(
-            Date.now()
-            +
-            24*60*60*1000
-        )
-        .toISOString();
+    const intervals = [
+    0,
+    1,
+    3,
+    7,
+    14,
+    30
+];
 
+
+const days =
+    intervals[word.level];
+
+
+word.nextReview =
+    new Date(
+        Date.now()
+        +
+        days *
+        24 *
+        60 *
+        60 *
+        1000
+    )
+    .toISOString();
 
 }
 
