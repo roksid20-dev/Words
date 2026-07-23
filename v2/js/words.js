@@ -14,25 +14,6 @@ words.js
 let words = loadWords();
 
 
-
-const englishInput =
-    document.getElementById(
-        "englishInput"
-    );
-
-
-const russianInput =
-    document.getElementById(
-        "russianInput"
-    );
-
-
-const addWordButton =
-    document.getElementById(
-        "addWordButton"
-    );
-
-
 const wordsList =
     document.getElementById(
         "wordsList"
