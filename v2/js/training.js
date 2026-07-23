@@ -64,6 +64,25 @@ const resultElement =
  * Начать тренировку
  */
 function startTraining(){
+    const mode =
+    document.querySelector(
+        'input[name="trainingMode"]:checked'
+    ).value;
+
+
+const count =
+    document.querySelector(
+        'input[name="trainingCount"]:checked'
+    ).value;
+
+
+trainingMode = mode;
+
+
+trainingCount =
+    count === "all"
+        ? null
+        : Number(count);
 
 
     trainingActive = true;
