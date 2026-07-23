@@ -144,6 +144,15 @@ if(
         );
 
 }
+trainingCorrect = 0;
+
+trainingWrong = 0;
+
+trainingCurrent = 0;
+
+
+updateTrainingProgress();
+    
 
 console.log(
     "Слова в тренировке:",
@@ -155,14 +164,6 @@ console.log(
 
 }
 
-trainingCorrect = 0;
-
-trainingWrong = 0;
-
-trainingCurrent = 0;
-
-
-updateTrainingProgress();
 
 
 
