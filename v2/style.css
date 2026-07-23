@@ -282,9 +282,13 @@ button:active {
 
 #checkButton {
 
-    width: 140px;
+    display: block;
 
-    flex-shrink: 0;
+    width: 160px;
+
+    height:42px;
+
+    margin: 10px auto;
 
 }
 
@@ -321,15 +325,6 @@ button:active {
 
 
 
-
-#checkButton {
-
-    width: 160px;
-
-    margin-top: 10px;
-
-}
-
 #trainingArea {
 
     max-width: 400px;
@@ -358,15 +353,6 @@ button:active {
 }
 
 
-#checkButton {
-
-    display: block;
-
-    margin: 10px auto;
-
-    width: 160px;
-
-}
 
 .add-word button {
 
@@ -405,17 +391,6 @@ button:active {
 
 }
 
-
-
-#checkButton {
-
-    display: block;
-
-    margin: 10px auto;
-
-    width: 160px;
-
-}
 
 
 #addWordButton {
