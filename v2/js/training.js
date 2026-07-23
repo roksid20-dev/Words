@@ -213,6 +213,12 @@ function checkAnswer(){
 
 
         saveWords(words);
+    setTimeout(
+    ()=>{
+        nextTrainingWord();
+    },
+    1000
+);
 
 
     setTimeout(
