@@ -185,6 +185,36 @@ function addOrUpdateWord(){
     else {
 
 
+    const duplicate =
+        words.some(word =>
+            word.english.toLowerCase() === english.toLowerCase()
+            &&
+            word.russian.toLowerCase() === russian.toLowerCase()
+        );
+
+
+    if(duplicate){
+
+        alert(
+            "Такое слово уже есть"
+        );
+
+        return;
+
+    }
+
+
+
+    addWord(
+        words,
+        english,
+        russian
+    );
+
+
+}
+
+
         addWord(
             words,
             english,
