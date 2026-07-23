@@ -809,6 +809,13 @@ smartMode.addEventListener(
 
         }
 
+
+        if(trainingStarted){
+
+            stopTraining();
+
+        }
+
     }
 );
 
@@ -825,9 +832,15 @@ freeMode.addEventListener(
 
         }
 
+
+        if(trainingStarted){
+
+            stopTraining();
+
+        }
+
     }
 );
-
 function startTraining(){
 
 
