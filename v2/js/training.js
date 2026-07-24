@@ -326,18 +326,6 @@ function checkAnswer(){
 );
 
 
-    setTimeout(
-        ()=>{
-
-            nextTrainingWord();
-            answerInput.focus();
-            answerInput.value = "";
-            answerInput.focus();
-
-        },
-        1000
-    );
-
 
 }
 
