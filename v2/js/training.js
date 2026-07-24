@@ -292,6 +292,13 @@ function checkAnswer(){
             currentWord,
             currentDirection
         );
+        updateReview(
+    currentWord,
+    currentDirection === "en-ru"
+        ? "enRu"
+        : "ruEn",
+    true
+);
 
 
     }
@@ -307,6 +314,13 @@ function checkAnswer(){
             currentWord,
             currentDirection
         );
+        updateReview(
+    currentWord,
+    currentDirection === "en-ru"
+        ? "enRu"
+        : "ruEn",
+    false
+);
 
 
     }
