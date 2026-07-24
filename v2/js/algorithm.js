@@ -23,11 +23,20 @@ function getSmartWords(words){
     const now =
         new Date();
 
+
     const dueWords =
         words.filter(word=>{
 
             const review =
-                word.review.enRu;
+                word.review?.enRu;
+
+
+            if(!review || !review.nextReview){
+
+                return true;
+
+            }
+
 
             return (
                 new Date(
@@ -38,11 +47,20 @@ function getSmartWords(words){
         });
 
 
+
     const otherWords =
         words.filter(word=>{
 
             const review =
-                word.review.enRu;
+                word.review?.enRu;
+
+
+            if(!review || !review.nextReview){
+
+                return false;
+
+            }
+
 
             return (
                 new Date(
@@ -51,6 +69,7 @@ function getSmartWords(words){
             );
 
         });
+
 
 
     otherWords.sort(
