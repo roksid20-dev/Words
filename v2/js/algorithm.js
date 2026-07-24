@@ -18,32 +18,58 @@ let lastDirection = null;
 /**
  * Выбирает слова для умной тренировки
  */
-function getSmartWords(words) {
-
+function getSmartWords(words){
 
     const now =
         new Date();
 
+    const dueWords =
+        words.filter(word=>{
+
+            const review =
+                word.review.enRu;
+
+            return (
+                new Date(
+                    review.nextReview
+                ) <= now
+            );
+
+        });
 
 
-    return [...words]
-        .sort(
-            (a,b)=>{
+    const otherWords =
+        words.filter(word=>{
+
+            const review =
+                word.review.enRu;
+
+            return (
+                new Date(
+                    review.nextReview
+                ) > now
+            );
+
+        });
 
 
-                return (
-                    calculatePriority(b)
-                    -
-                    calculatePriority(a)
-                );
+    otherWords.sort(
+        (a,b)=>
+            calculatePriority(b)
+            -
+            calculatePriority(a)
+    );
 
 
-            }
-        );
+    return [
 
+        ...dueWords,
+
+        ...otherWords
+
+    ];
 
 }
-
 
 
 
