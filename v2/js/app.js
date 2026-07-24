@@ -68,11 +68,10 @@ function updateWordsStats(){
 
 
             const enRu =
-                word.review.enRu.level;
-
-
+                word.review?.enRu?.level || 0;
+            
             const ruEn =
-                word.review.ruEn.level;
+                word.review?.ruEn?.level || 0;
 
 
 
