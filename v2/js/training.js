@@ -111,6 +111,10 @@ trainingCurrent = 0;
 
     trainingWords =
         getQuickWords(words);
+        console.log(
+            "trainingWords:",
+            trainingWords
+);
 
 
 }
@@ -119,6 +123,11 @@ else if(trainingMode === "all"){
 
     trainingWords =
         getAllWords(words);
+    console.log(
+        "trainingWords:",
+        trainingWords
+);
+    
 
 
 }
@@ -127,6 +136,10 @@ else{
 
     trainingWords =
         getSmartWords(words);
+    console.log(
+        "trainingWords:",
+        trainingWords
+);
 
 
 }
@@ -161,6 +174,10 @@ console.log(
 
 
     nextTrainingWord();
+    console.log(
+    "currentWord:",
+    currentWord
+);
 
 }
 
