@@ -47,6 +47,9 @@ function initApp(){
     renderWords();
 
 
+    updateWordsStats();
+
+
 }
 
 
