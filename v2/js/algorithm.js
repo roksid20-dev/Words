@@ -385,22 +385,68 @@ function updateReview(
     const review =
         word.review[direction];
 
-
-
     if(isCorrect){
 
         review.repetitions++;
 
+        if(review.repetitions===1){
+
+            review.interval=1;
+
+        }
+        else if(review.repetitions===2){
+
+            review.interval=3;
+
+        }
+        else{
+
+            review.interval=
+                Math.round(
+                    review.interval*
+                    review.ease
+                );
+
+        }
+
+        review.ease+=0.1;
+
+        if(review.ease>3){
+
+            review.ease=3;
+
+        }
+
     }
     else{
 
-        review.repetitions = 0;
+        review.repetitions=0;
+
+        review.interval=1;
+
+        review.ease-=0.2;
+
+        if(review.ease<1.3){
+
+            review.ease=1.3;
+
+        }
 
     }
 
 
+    const next=
+        new Date();
 
-    word.updatedAt =
+    next.setDate(
+        next.getDate()+
+        review.interval
+    );
+
+    review.nextReview=
+        next.toISOString();
+
+    word.updatedAt=
         new Date().toISOString();
 
 }
