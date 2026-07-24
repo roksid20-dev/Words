@@ -429,7 +429,6 @@ function markWrong(
     direction
 ){
 
-
     const key =
         direction === "en-ru"
         ?
@@ -438,30 +437,35 @@ function markWrong(
         "ruEn";
 
 
+    const review =
+        word.review[key];
+
 
     word.stats[key].wrong++;
 
 
+    if(review.level > 0){
 
-    if(word.level > 0){
-
-        word.level--;
+        review.level--;
 
     }
 
 
+    review.interval = 1;
 
-    word.nextReview =
+
+    review.nextReview =
         new Date()
         .toISOString();
 
-    trainingCorrect++;
+
+    trainingWrong++;
+
     trainingCurrent++;
+
     updateTrainingProgress();
 
-
 }
-
 
 
 
