@@ -363,7 +363,6 @@ function markCorrect(
     direction
 ){
 
-
     const key =
         direction === "en-ru"
         ?
@@ -372,55 +371,54 @@ function markCorrect(
         "ruEn";
 
 
+    const review =
+        word.review[key];
+
 
     word.stats[key].correct++;
 
 
+    if(review.level < 5){
 
-    if(word.level < 5){
-
-        word.level++;
-
-
+        review.level++;
 
     }
 
 
-
     const intervals = [
-    0,
-    1,
-    3,
-    7,
-    14,
-    30
-];
+        0,
+        1,
+        3,
+        7,
+        14,
+        30
+    ];
 
 
-const days =
-    intervals[word.level];
+    const days =
+        intervals[review.level];
 
 
-word.nextReview =
-    new Date(
-        Date.now()
-        +
-        days *
-        24 *
-        60 *
-        60 *
-        1000
-    )
-    .toISOString();
+    review.nextReview =
+        new Date(
+            Date.now()
+            +
+            days *
+            24 *
+            60 *
+            60 *
+            1000
+        )
+        .toISOString();
 
 
-trainingWrong++;
+    trainingCorrect++;
 
-trainingCurrent++;
+    trainingCurrent++;
 
-updateTrainingProgress();
+    updateTrainingProgress();
+
 }
-
 
 
 /**
