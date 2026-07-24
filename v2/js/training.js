@@ -328,8 +328,9 @@ function checkAnswer(){
 
 
         saveWords(words);
+    
     setTimeout(
-    ()=>{
+        ()=>{
         nextTrainingWord();
         answerInput.focus();
         answerInput.value = "";
