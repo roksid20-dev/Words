@@ -327,15 +327,18 @@ function checkAnswer(){
 
 
 
-        saveWords(words);
-    
-    setTimeout(
-        ()=>{
-        nextTrainingWord();
-        answerInput.focus();
+       saveWords(words);
+
+
+setTimeout(
+    ()=>{
+
         answerInput.value = "";
+
+        nextTrainingWord();
+
         answerInput.focus();
-        
+
     },
     1000
 );
