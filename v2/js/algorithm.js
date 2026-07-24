@@ -375,3 +375,32 @@ function getQuickWords(words){
 
 
 }
+
+function updateReview(
+    word,
+    direction,
+    isCorrect
+){
+
+    const review =
+        word.review[direction];
+
+
+
+    if(isCorrect){
+
+        review.repetitions++;
+
+    }
+    else{
+
+        review.repetitions = 0;
+
+    }
+
+
+
+    word.updatedAt =
+        new Date().toISOString();
+
+}
