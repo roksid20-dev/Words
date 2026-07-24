@@ -185,6 +185,10 @@ function nextTrainingWord(){
         getNextWord(
             trainingWords
         );
+    console.log(
+    "Следующее слово:",
+    currentWord
+);
 
 
 
